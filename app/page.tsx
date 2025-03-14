@@ -125,29 +125,129 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="absolute justify-center inset-0 bg-gradient-to-b from-blue-400/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-400/20 to-transparent" />
+
         <div className="relative pt-32 px-4">
           <div className="max-w-8xl mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-8xl md:text-9xl font-bold text-[#FFE5B4] mb-4 tracking-wider flex justify-center items-center gap-4"
+              className="text-8xl md:text-9xl font-bold text-[#FFE5B4] mb-4 tracking-wider flex items-center gap-4"
             >
-              Solar Power <Zap className="h-14 w-12 text-yellow-400" />
+              Solar Power <Zap className="h-14 w-12 text-yellow-400" />{" "}
+              {/* Lightning bolt icon */}
             </motion.h1>
+            <div className="absolute top-24 right-10">
+              {/* <p className="text-white">Quick installation</p> */}
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900">Our Features</h2>
-            <p className="mt-2 text-lg text-gray-600">
-              Discover the best solar solutions tailored for your needs.
-            </p>
+        {/* Feature Cards */}
+        <div className="absolute bottom-8 left-0 right-0 px-6 ">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-1">
+            {/* Power Solutions Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="bg-white/20 backdrop-blur-md rounded-[2rem] p-6 overflow-hidden relative border border-white/30 shadow-lg hover:bg-white/30 transition-all duration-300"
+            >
+              <div className="flex items-start">
+                <Image
+                  src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80"
+                  alt="Solar Panel"
+                  width={80}
+                  height={80}
+                  className="rounded-lg"
+                />
+                <div className="ml-4">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
+                    Power Solutions
+                  </h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Water Resistant</li>
+                    <li>• High Heat Resistant</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Reviews Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+              className="bg-white/20 backdrop-blur-md rounded-[2rem] p-6 overflow-hidden relative border border-white/30 shadow-lg hover:bg-white/30 transition-all duration-300"
+            >
+              <div className="flex items-start">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80"
+                  alt="Solar Engineer"
+                  width={80}
+                  height={80}
+                  className="rounded-lg"
+                />
+                <div className="ml-4">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
+                    Explore Reviews
+                  </h3>
+                  <div className="flex items-center">
+                    <span className="text-xl font-bold mr-2 text-white">
+                      4.8
+                    </span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 text-yellow-400 fill-current"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <Button
+                    variant="link"
+                    className="mt-2 p-0 h-auto text-[#FFE5B4] hover:text-[#FFD700]"
+                  >
+                    SEE MORE
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Installation Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+              className="bg-white/20 backdrop-blur-md rounded-[2rem] p-6 overflow-hidden relative border border-white/30 shadow-lg hover:bg-white/30 transition-all duration-300"
+            >
+              <div className="flex items-start">
+                <Image
+                  src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?auto=format&fit=crop&q=80"
+                  alt="Battery Storage"
+                  width={80}
+                  height={80}
+                  className="rounded-lg"
+                />
+                <div className="ml-4">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
+                    Installation Track Record
+                  </h3>
+                  <p className="text-2xl font-bold mb-1 text-white">
+                    Over 30,000
+                  </p>
+                  <p className="text-sm text-white/90">Installations</p>
+                  <Button
+                    variant="link"
+                    className="mt-2 p-0 h-auto text-[#FFE5B4] hover:text-[#FFD700]"
+                  >
+                    TAKE ORDER
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

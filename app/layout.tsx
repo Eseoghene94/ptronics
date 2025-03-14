@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Professional solar power installation services with 30-minute installation guarantee.",
   icons: {
-    icon: "/logo.jpeg", // Path to your favicon in the public folder
+    icon: "/logo123.jpeg", // Path to your favicon in the public folder
   },
 };
 
